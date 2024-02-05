@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Clients\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Models\Enum\" />
+    <Folder Include="Models\DataModels\" />
+    <Folder Include="Models\Response\" />
+    <Folder Include="Models\Request\" />
+    <Folder Include="Modules\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Providers\" />
+  </ItemGroup>
+
+</Project>

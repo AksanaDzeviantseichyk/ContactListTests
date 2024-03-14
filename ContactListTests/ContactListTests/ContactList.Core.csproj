@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Clients\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Models\Enum\" />
     <Folder Include="Models\DataModels\" />
     <Folder Include="Models\Response\" />
@@ -16,6 +14,10 @@
     <Folder Include="Modules\" />
     <Folder Include="Utils\" />
     <Folder Include="Providers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

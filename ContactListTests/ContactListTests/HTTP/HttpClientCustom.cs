@@ -30,14 +30,7 @@ namespace ContactList.Core.HTTP
 
             if (request.Content != null)
             {
-                if (request.Content is MultipartFormDataContent formDataContent)
-                {
-                    httpRequest.Content = formDataContent;
-                }
-                else
-                {
-                    httpRequest.Content = new StringContent(JsonConvert.SerializeObject(request.Content), Encoding.UTF8, "application/json");
-                }
+                httpRequest.Content = new StringContent(JsonConvert.SerializeObject(request.Content), Encoding.UTF8, "application/json");
             }
 
             var response = await _client.SendAsync(httpRequest);

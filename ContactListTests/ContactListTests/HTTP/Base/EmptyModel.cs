@@ -1,6 +1,6 @@
 ﻿namespace ContactList.Core.HTTP.Base
 {
-    internal class EmptyModel
+    public class EmptyModel
     {
     }
 }

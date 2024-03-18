@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace ContactList.Core.Models.Response
 {
-    internal class LoginResponse
+    public class UserInfoResponse
     {
+        [JsonProperty("user")]
+        public UserModel User { get; set; }
+
+        [JsonProperty("token")]
+        public string Token { get; set; }
+
     }
 }

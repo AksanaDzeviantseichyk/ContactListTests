@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace ContactList.Core.Models.Request
+namespace ContactList.Core.Models.Request.Users
 {
-    public class UpdateUserRequest
+    public class UserModelRequest
     {
         [JsonProperty("firstName")]
         public string FirstName { get; set; }

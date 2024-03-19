@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace ContactList.Core.Models.Response
+namespace ContactList.Core.Models.Response.Users
 {
     public class UserInfoResponse
     {
         [JsonProperty("user")]
-        public UserModel User { get; set; }
+        public UserModelResponse User { get; set; }
 
         [JsonProperty("token")]
         public string Token { get; set; }

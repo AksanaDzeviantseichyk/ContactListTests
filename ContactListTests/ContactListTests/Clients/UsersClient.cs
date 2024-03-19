@@ -1,8 +1,7 @@
 ﻿using ContactList.Core.HTTP;
 using ContactList.Core.HTTP.Base;
-using ContactList.Core.Models;
-using ContactList.Core.Models.Request;
-using ContactList.Core.Models.Response;
+using ContactList.Core.Models.Request.Users;
+using ContactList.Core.Models.Response.Users;
 using Microsoft.Extensions.Configuration;
 
 namespace ContactList.Core.Clients
@@ -20,21 +19,21 @@ namespace ContactList.Core.Clients
             _client = client;
         }
 
-        public async Task<CommonResponse<UserInfoResponse>> AddUser(AddUserRequest request)
+        public async Task<CommonResponse<UserInfoResponse>> AddUser(UserModelRequest request)
         {
-            var httpRequest = new RequestCustom<AddUserRequest>
+            var httpRequest = new RequestCustom<UserModelRequest>
             {
                 Content = request,
                 RequestUri = $"{_url}/users",
                 Method = HttpMethod.Post
             };
 
-            var response = await _client.SendAsync<AddUserRequest, UserInfoResponse>(httpRequest);
+            var response = await _client.SendAsync<UserModelRequest, UserInfoResponse>(httpRequest);
 
             return response;
         }
 
-        public async Task<CommonResponse<UserModel>> GetUserProfile(string? token = null)
+        public async Task<CommonResponse<UserModelResponse>> GetUserProfile(string? token = null)
         {
             var httpRequest = new RequestCustom<EmptyModel>
             {
@@ -43,14 +42,14 @@ namespace ContactList.Core.Clients
                 Token = token
             };
 
-            var response = await _client.SendAsync<EmptyModel, UserModel>(httpRequest);
+            var response = await _client.SendAsync<EmptyModel, UserModelResponse>(httpRequest);
 
             return response;
         }
 
-        public async Task<CommonResponse<UserModel>> UpdateUser(UpdateUserRequest request, string? token = null)
+        public async Task<CommonResponse<UserModelResponse>> UpdateUser(UserModelRequest request, string? token = null)
         {
-            var httpRequest = new RequestCustom<UpdateUserRequest>
+            var httpRequest = new RequestCustom<UserModelRequest>
             {
                 Content = request,
                 RequestUri = $"{_url}/users/me",
@@ -58,7 +57,7 @@ namespace ContactList.Core.Clients
                 Token = token
             };
 
-            var response = await _client.SendAsync<UpdateUserRequest, UserModel>(httpRequest);
+            var response = await _client.SendAsync<UserModelRequest, UserModelResponse>(httpRequest);
 
             return response;
         }

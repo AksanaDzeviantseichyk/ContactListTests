@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ContactList.Core.Models.Request
+namespace ContactList.Core.Models.Request.Users
 {
     public class LoginRequest
     {

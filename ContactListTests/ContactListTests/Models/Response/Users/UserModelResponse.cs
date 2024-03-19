@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace ContactList.Core.Models
+namespace ContactList.Core.Models.Response.Users
 {
-    public class UserModel
+    public class UserModelResponse
     {
         [JsonProperty("id")]
         public string Id { get; set; }

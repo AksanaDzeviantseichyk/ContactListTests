@@ -20,6 +20,5 @@ namespace ContactList.ApiTests
 
             Scope = container.BeginLifetimeScope();
         }
-
     }
 }
